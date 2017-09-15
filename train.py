@@ -13,7 +13,9 @@ import sklearn
 from sklearn_pandas import DataFrameMapper
 import joblib
 
-INPUT_FILE = "/volumes/data/lending-club-data.csv"
+import roro
+
+INPUT_FILE = 'https://s3.amazonaws.com/rorodata-datasets/lending-club-data.csv'
 
 features = [
     'grade',                 # grade of the loan (categorical)
@@ -66,12 +68,21 @@ def train():
     print("building the model")
     log_lm = LogisticRegression()
     log_lm.fit(X_train, y_train)
-    log_lm.score(X_test, y_test)
+    test_score = log_lm.score(X_test, y_test)
+    print(test_score)
 
     print("saving the model")
     joblib.dump(mapper, "/volumes/data/mapper.pkl")
-    joblib.dump(log_lm, "/volumes/data/logistic-regression-model.pkl")
+    #joblib.dump(log_lm, "/volumes/data/logistic-regression-model.pkl")
 
+    p = roro.get_current_project()
+    repo = p.get_model_repository("logistic-regression-model")
+    image = repo.new_model_image(log_lm)
+    image["Numerical-Columns"] = ",".join(numerical_cols)
+    image["Categorical-Columns"] = ",".join(categorical_cols)
+    image["Test-Score"] = str(test_score)
+    image.save(comment="built new model")
+    
     print("done")
 
 _mapper = None
