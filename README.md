@@ -24,15 +24,17 @@ The process is a simple two-step process, you will (1) create a project on roroc
 
 #### 3: Deploy your project
 1.	If you have everything in place, you can use the command roro deploy to deploy your project to production. This creates the services you want to deploy and prints out the url/endpoint, but in addition it does a lot of things behind the scenes. For our understanding, let’s list down what goes on in the background, in sequential order
-            i.   Creates a base docker image based on the environment you have chosen in the roro.yml file
-            ii.  Augments the docker image with additional libraries from the requirements.txt file, if any
-            iii. Provisions the hardware as indicated in the roro.yml file
-            iv.  Uses matching existing instance on rorocloud if available, else starts a new instance for this project
-            v.   Copies and loads the augmented docker image to this project space on rorocloud
-            vi.  Starts web services….
-            vii. Exposes your python functions as RESTful API services.
+                    i.   Creates a base docker image based on the environment you have chosen in the roro.yml file
+                    ii.  Augments the docker image with additional libraries from the requirements.txt file, if any
+                    iii. Provisions the hardware as indicated in the roro.yml file
+                    iv.  Uses matching existing instance on rorocloud if available, else starts a new instance for this project
+                    v.   Copies and loads the augmented docker image to this project space on rorocloud
+                    vi.  Starts web services….
+                    vii. Exposes your python functions as RESTful API services.
 
-2.	Remember, you must have a trained model in production for your services to work. If you have a pretrained model, you must serialize it and copy it to the project. If you plan to train the model in the production environment e.g. using your train.py, then you must copy the data for this and run the train function. To do this, you can use the following command roro run python *yourtrain.pyfile* from the command prompt from within the local repository
+2.	Remember, you must have a trained model in production for your services to work. If you have a pretrained model, you must serialize it and copy it to the project. If you plan to train the model in the production environment e.g. using your train.py, then you must copy the data for this and run the train function. To do this, you can use the following command 
+> roro run python train.py
+from the command prompt from within the local repository
 
 #### 4: Use the services you have deployed
 
