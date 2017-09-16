@@ -1,6 +1,6 @@
 # credit-scoring-demo
 ## Introduction
-Jupyter notebooks are the most commonly used tool to iteratively build data science models.  In this writeup, we discuss how a data scientist can deploy and manage data science models in production, without just a few simple lines of command from a CLI. In this writeup, we shall illustrate this using models in Python, a similar write-up for R is on the way.
+In this writeup, we discuss how a data scientist can deploy and manage data science models in production, without just a few simple lines of command from a CLI. In this writeup, we shall illustrate this using models in Python, a similar write-up for R is on the way.
 
 The process is a simple two-step process, you will (1) create a project on rorocloud and (2) deploy your model files to rorocloud. These two steps will be executed using the roro client, which is a CLI tool.
 
