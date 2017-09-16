@@ -34,6 +34,7 @@ The process is a simple two-step process, you will (1) create a project on roroc
 
 2.	Remember, you must have a trained model in production for your services to work. If you have a pretrained model, you must serialize it and copy it to the project. If you plan to train the model in the production environment e.g. using your train.py, then you must copy the data for this and run the train function. To do this, you can use the following command 
 > roro run python train.py
+
 from the command prompt from within the local repository
 
 #### 4: Use the services you have deployed
