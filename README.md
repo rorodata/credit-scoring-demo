@@ -12,7 +12,7 @@ To understand the big picture view about the rorodata platform, [go here](https:
 
 
 #### Prerequisites
-- Download roro client for python3 using pip install roro-client. Note that currently, we only support python 3.5 and above.
+- Download roro client for python3 using `pip install roro-client`. Note that currently, we only support python 3.5 and above.
 - You must have a rorodata platform account, as the models will be deployed on rorodata platform for this example. You may request access here. 
 
 #### Steps (code only)
@@ -25,7 +25,9 @@ To understand the big picture view about the rorodata platform, [go here](https:
 Created project: credit-score
 
 > roro deploy
-Your project has been deployed.
+Deploying project credit-score. This may take a few moments ...
+Restarted {} services. 1
+default: https://credit-score.rorocloud.io/
 
 # run training to create trained model
 > roro run python train.py
@@ -55,7 +57,7 @@ ed5906db  running   23 seconds ago  0:00:23  C1               python train.py
 
 
 ```
-new_loan_application= { 'delinq_2yrs': 0.0,
+> new_loan_application= { 'delinq_2yrs': 0.0,
  'delinq_2yrs_zero': 1.0,
  'dti': 8.72,
  'emp_length_num': 0,
@@ -74,10 +76,11 @@ new_loan_application= { 'delinq_2yrs': 0.0,
  'sub_grade_num': 1.0}
 
 #we will use firefly to call our API, you can use any other library e.g. Requests
-import firefly
+> import firefly
 
 #change the below statement to match your prediction service api name
-client = firefly.Client(“credit-scoring-demo.rorodata.io”)
+> client = firefly.Client(“credit-score.rorodata.io”)
 
-client.predict(row=new_loan_application)
+> client.predict(row=new_loan_application)
+0.48829986303342249
 ```
