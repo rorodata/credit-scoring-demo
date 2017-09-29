@@ -13,7 +13,7 @@ To understand the big picture view about the rorodata platform, [go here](https:
 
 #### Prerequisites
 - Download roro client for python3 using `pip install roro-client`. Note that currently, we only support python 3.5 and above.
-- You must have a rorodata platform account, as the models will be deployed on rorodata platform for this example. You may request access here. 
+- You must have a rorodata platform account, as the models will be deployed on rorodata platform for this example. You may request access [here](http://www.rorodata.com).
 
 #### Steps (code only)
 ```
