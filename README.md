@@ -8,7 +8,7 @@ Please look at the notebook in the rorodata github repository [here](https://git
 ### Productionizing Machine Learning Models Using rorodata 
 Below, we discuss how a data scientist can deploy and manage data science models in production using rorodata platform, with just a few simple lines of command from a CLI. In this writeup, we shall illustrate this using Python, a similar write-up for R is on the way. 
 
-To understand the big picture view about the rorodata platform, [go here](https://github.com/rorodata/)
+To understand the big picture view about the rorodata platform, [go here](https://github.com/rorodata/documents/blob/master/about-rorodata.md)
 
 
 #### Prerequisites
