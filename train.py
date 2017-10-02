@@ -73,7 +73,7 @@ def train():
 
     print("saving the model")
     joblib.dump(mapper, "/volumes/data/mapper.pkl")
-    #joblib.dump(log_lm, "/volumes/data/logistic-regression-model.pkl")
+    joblib.dump(log_lm, "/volumes/data/logistic-regression-model.pkl")
 
     p = roro.get_current_project()
     repo = p.get_model_repository("logistic-regression-model")
