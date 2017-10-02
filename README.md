@@ -24,14 +24,14 @@ There is a lot that goes on behind the scenes in the rorodata platform. It may b
 > roro create credit-score
 Created project: credit-score
 
+# run training to create trained model
+> roro run python train.py
+Started new job ed5906db
+
 > roro deploy
 Deploying project credit-score. This may take a few moments ...
 Restarted {} services. 1
 default: https://credit-score.rorocloud.io/
-
-# run training to create trained model
-> roro run python train.py
-Started new job ed5906db
 
 #inspect processes, make sure training is finished before using service
 > roro ps
@@ -79,7 +79,7 @@ ed5906db  running   23 seconds ago  0:00:23  C1               python train.py
 > import firefly
 
 #change the below statement to match your prediction service api name
-> client = firefly.Client(“credit-score.rorodata.io”)
+> client = firefly.Client('https://credit-score.rorocloud.io')
 
 > client.predict(row=new_loan_application)
 0.48829986303342249
