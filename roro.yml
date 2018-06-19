@@ -1,5 +1,5 @@
 project: credit-scoring-demo
-runtime: rorodata/sandbox
+runtime: python3
 
 services:
   - name: default
